@@ -89,7 +89,7 @@ fn copy_and_minify_css(src_file: &path::Path, dest_file: &path::Path, minify: bo
                 e
             )
         })?;
-        std::fs::write(dest_file, minified)?;
+        minified.write(&mut std::fs::File::create(dest_file)?)?;
     } else {
         files::copy_file(src_file, dest_file)?;
     }
@@ -112,7 +112,7 @@ fn copy_and_minify_js(src_file: &path::Path, dest_file: &path::Path, minify: boo
             dest_file.display()
         );
         let content = std::fs::read_to_string(src_file)?;
-        std::fs::write(dest_file, minify(&content))?;
+        minify(&content).write(&mut std::fs::File::create(dest_file)?)?;
     } else {
         files::copy_file(src_file, dest_file)?;
     }
