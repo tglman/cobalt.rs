@@ -1004,9 +1004,9 @@ dependencies = [
 
 [[package]]
 name = "html-minifier"
-version = "3.0.17"
+version = "4.0.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "a69de60a6580c19bb5c99abf57a76acf935f926d1f5dfd1bda86572c1fb00e87"
+checksum = "18f74036e4be1b97eaf78bcf795d55002eccf613d5c4705bf78d3b92649ab00f"
 dependencies = [
  "cow-utils",
  "educe",
